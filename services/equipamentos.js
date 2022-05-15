@@ -5,7 +5,7 @@ const config = require('../config');
 async function getMultiple(page = 1){
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
-    `SELECT id, id_antiga, equipamento, modelo, fabricante, capacidade,
+    `SELECT id, id_atual, id_antiga, equipamento, modelo, fabricante, capacidade,
     resolução, localização, serviço, bancada, localização_na_bancada,
     erro_máximo, periodicidade_de_calibração, eq_status 
     FROM equipamentos LIMIT ${offset},${config.listPerPage}`
